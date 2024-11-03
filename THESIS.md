@@ -26,23 +26,38 @@ Despite the current state of project estimation and developer contribution analy
 
 This thesis aims to develop a tool that will assist teams and management in tracking productivity and accurately estimating future projects—whether that be setting deadlines, predicting budget overruns, or assessing team dynamics. To achieve this goal, we will address the following key questions:
 
-* RQ 1.1: How can team dynamics and productivity data be related to project estimation?
-* RQ 1.2: Which productivity and project metrics should be collected?
-* RQ 1.3: How can productivity metrics be effectively used for project estimation?
+* RQ 1: Which factors influence productivity?
+    * RQ 1.1: Which factors influence productivity?
+    * RQ 1.2: Which metrics are applied to measure those factors?
+    * RQ 1.3: Which metrics among them are reliable?
+
+* RQ 2: How productivity estimations relate to team ...?
+    * RQ 2.1: What the productivity influencing factors can tell about a development team?
+    * RQ 2.2: Which factors has more weight in the team description?
+    * RQ 2.3: How to map metrics to team ...?
+
+* RQ 3: How to calculate project cost based on team data?
+
 
 By answering these questions, we hope to create a useful tool that will not only help mature teams continue to succeed as they scale but will also aid less experienced management teams in improving their estimation processes and decision-making. Ultimately, the goal is to develop a comprehensive framework that benefits all stakeholders in software development, from developers to project managers to upper management.
 
 ## Literature Review
 
-The essence of estimating both productivity and project outcomes has long been understood—metrics and data are vital for all stakeholders, from developer leads to upper management and directors. However, despite the availability of metrics, many organizations consistently make mistakes in how they estimate productivity and manage project planning. Our objective is to investigate what is being done wrong and propose a more effective approach to the use of metrics. We will explore how metrics are misused and misunderstood, as well as how they can be linked to project estimation in a meaningful way. By understanding the correct metrics to use and the methodologies for collecting them, we aim to define a clear framework for productivity and project estimation. This will also help us determine how to calculate project costs accurately. The following chapters will focus on the practical aspects of implementation and address the potential challenges in collecting and analyzing these metrics.
+The essence of estimating both productivity and project outcomes has long been understood—metrics and data are vital for all stakeholders, from developer leads to upper management and directors. However, despite the availability of metrics, many organizations do not succeed to estimate productivity and manage project planning. Our objective is to investigate why it is happening and propose a more effective approach to the use of metrics. We will explore which factors influence productivity as well as how they can be linked to project estimation in a meaningful way. By understanding the correct factors we will find related metrics to measure those factors. With these metrics we aim to define a clear framework for productivity and project estimation. This will also help us determine how to calculate project costs accurately. The following chapters will focus on the practical aspects of implementation and address the potential challenges in collecting and analyzing these metrics.
 
-#### Common Myths and Mistakes in Productivity Estimation
+#### Problem with Metrics, Diverse Nature of Productivity
 
 One of the most prevalent misconceptions in productivity estimation is the belief that a single metric can capture the entire picture. Many management teams and leads tend to rely on isolated metrics—whether it's the number of commits, lines of code, or hours worked—believing that these metrics alone provide a comprehensive view of developer productivity. However, all metrics have flaws, and when used in isolation, they can paint a misleading picture. Metrics are often subject to corruption, manipulation, or misinterpretation. For example, near project deadlines, developers may work longer hours, inflating activity metrics without necessarily reflecting real progress or quality.
 
 Furthermore, different stakeholders require distinct sets of metrics. For example, management tends to focus on high-level metrics such as business outcomes and project timelines, while team leads might prioritize code quality and task completion. DevOps teams focus on operational efficiency, such as deployment frequency and uptime. These differing perspectives mean that no single metric can serve all needs, making it essential to gather a broad set of metrics from different dimensions. 
 
 The SPACE framework (Satisfaction, Performance, Activity, Collaboration, and Efficiency) is a good example of how productivity should be viewed across multiple dimensions. Satisfaction, for example, is closely linked to productivity, as happier developers tend to produce higher-quality work and are less prone to burnout. Collaboration metrics reflect how well team members work together, while activity metrics track tangible outputs like commits and reviews. However, these activity metrics alone are insufficient without the context of performance and efficiency. A team that is performing well can often be many times more efficient than individual developers working in isolation, highlighting the importance of balancing team dynamics and individual contributions. Metrics should not just track outputs but also identify potential issues, such as burnout, dissatisfaction, and unrealistic expectations.
+
+Research in software development increasingly acknowledges the impact of Developer Experience (DevX) on Developer Productivity (DevP). The study by Razzaq et al. (2024) provides a systematic review of the various DevX factors and the practices that enhance DevX, revealing their significant role in influencing DevP. The authors identified a range of DevX factors, such as work fragmentation, developer concentration, and availability of resources, as well as a suite of practices designed to improve these factors, thereby positively impacting productivity【26†source】.
+
+According to the study, several essential practices have been identified as enhancing DevX in ways that positively affect productivity. These include minimizing interruptions, improving team collaboration, and ensuring a stable, supportive technical environment. For productivity evaluation, understanding the status of these DevX factors is crucial. Low indicators in DevX metrics may suggest the need to implement specific DevX practices, which can enhance team satisfaction, reduce inefficiencies, and ultimately boost overall productivity.
+
+From Razzaq et al.'s work, we extracted and classified a list of measurable DevX metrics, organizing them by applicability and ease of collection. The table below presents these metrics and their categorization, providing a structured approach to incorporate DevX factors into our productivity measurement framework. In cases where specific DevX metrics fall below expectations, targeted DevX practices can be employed to address gaps, thereby aligning DevX with productivity goals in a data-driven way.
 
 #### Issues in Project Estimation
 
