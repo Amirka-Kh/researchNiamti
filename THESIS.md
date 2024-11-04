@@ -26,11 +26,6 @@ Despite the current state of project estimation and developer contribution analy
 
 This thesis aims to develop a tool that will assist teams and management in tracking productivity and accurately estimating future projects—whether that be setting deadlines, predicting budget overruns, or assessing team dynamics. To achieve this goal, we will address the following key questions:
 
-* RQ 1: Which factors influence productivity?
-    * RQ 1.1: Which factors influence productivity?
-    * RQ 1.2: Which metrics are applied to measure those factors?
-    * RQ 1.3: Which metrics among them are reliable?
-
 * RQ 2: How productivity estimations relate to team ...?
     * RQ 2.1: What the productivity influencing factors can tell about a development team?
     * RQ 2.2: Which factors has more weight in the team description?
