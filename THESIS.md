@@ -26,17 +26,11 @@ Despite the current state of project estimation and developer contribution analy
 
 This thesis aims to develop a tool that will assist teams and management in tracking productivity and accurately estimating future projects—whether that be setting deadlines, predicting budget overruns, or assessing team dynamics. To achieve this goal, we will address the following key questions:
 
-* RQ 1: Which factors influence productivity?
-    * RQ 1.1: Which factors influence productivity?
-    * RQ 1.2: Which metrics are applied to measure those factors?
-    * RQ 1.3: Which metrics among them are reliable?
-
 * RQ 2: How productivity estimations relate to team ...?
     * RQ 2.1: What the productivity influencing factors can tell about a development team?
     * RQ 2.2: Which factors has more weight in the team description?
     * RQ 2.3: How to map metrics to team ...?
 
-* RQ 3: How to calculate project cost based on team data?
 
 
 By answering these questions, we hope to create a useful tool that will not only help mature teams continue to succeed as they scale but will also aid less experienced management teams in improving their estimation processes and decision-making. Ultimately, the goal is to develop a comprehensive framework that benefits all stakeholders in software development, from developers to project managers to upper management.
@@ -86,3 +80,77 @@ Once we have collected the relevant metrics, the next step is to use statistical
 In this chapter, we have explored the common myths and mistakes associated with productivity and project estimation, and proposed a more comprehensive approach to addressing these issues. By collecting the right metrics and using a multidimensional approach, we can better understand the productivity of development teams and make more accurate project estimations. In the next chapter, we will delve into the practical details of implementing this approach, including the challenges of collecting reliable metrics and using them effectively in project planning.
 
 
+
+#### Team productivity in software development
+
+Team productivity in software development is one of the most important aspects of IT industry projects because team productivity links technical, economic and social factors that directly affect the labor and monetary costs to implement an IT project.  (1)
+This combination of many complex factors and the high cost of error makes the concept of development team productivity a very interesting and multifaceted subject for research.
+The topic of productivity of software development teams became especially relevant after the COVID-19 pandemic, when many developers were forced to work from home and the usual processes of interactions within the team needed urgent changes. (2)
+In the framework of our thesis, we understand productivity to mean the following: In software development, developer productivity refers to a team's ability to achieve outlined business objectives through developing, improving, and maintaining software. (3)
+
+To be able to influence team productivity, it is important to identify the factors that directly determine productivity. In 2021, at the ACM Queue conference, a team of researchers from Microsoft Research, GitHub, etc. proposed a framework called SPACE. This framework identifies the performance factors of software development teams. SPACE is a multidimensional approach to assessing developer productivity that goes beyond traditional metrics and takes into account not only the technical but also the social aspects of the team.
+
+- Satisfaction : The degree to which developers are satisfied with their work has a significant impact on their motivation and overall quality of task performance. A high level of satisfaction can help increase productivity.
+
+- Performance : This is a traditional criterion that includes both quantitative measures (e.g., number of completed tasks or functions) and quality of work performed.
+
+- Activity: This parameter assesses the level of developer activity using metrics such as number of commits or time spent on programming. It allows you to evaluate the team's involvement.
+
+- Communication and Collaboration: Effective communication within the team is crucial for successful software development. This metric covers the quality of communication between team members.
+
+- Efficiency and Flow: This metric measures how efficiently the team utilizes its resources to achieve its goals. Flow describes the state of maximum concentration of developers on task completion.
+(4)
+
+SPACE platform metrics help software development teams better understand the productivity of various aspects of their work.
+These metrics not only measure productivity, but also focus on employee satisfaction and the quality of team interactions, helping to create a more efficient and harmonious work environment. (4)
+
+| **SPACE**                | **Metric type**    | **Metric**                                                                                      |
+|------------------------------|---------------------|--------------------------------------------------------------------------------------------------|
+| **Satisfaction**             | Individual        | Developer satisfaction. 
+||Individual|Retention 
+||Individual|Satisfaction with code reviews assigned 
+||Individual|Perception of code reviews                                                     |
+|                              | Team or Group           | Developer satisfaction
+||Team or Group|Retention
+||System| Satisfaction with engineering system (e.g., CI/CD pipeline)                                                  |
+| **Performance**              | Individual       | Code review velocity                                                                    |
+|                              | Team or Group           | Code review velocity 
+||Team or Group |Story points shipped                                     |
+|                              | System      | Code review velocity
+||System|Code review (acceptance rate)
+||System|Customer satisfaction
+||System|Reliability (uptime)                              |
+| **Activity**                 | Individual       | Number of code reviews completed
+||Individual|Coding time
+||Individual|Commits
+||Individual|Lines of code                                                                    |
+|                              | Team or Group           | Story points completed
+||System|Frequency of deployments|                                                          |
+| **Communication and Collaboration** | Individual   | Code review score (quality or thoughtfulness)
+||Individual|PR merge times
+||Individual|Quality of meetings†
+||Individual|Knowledge sharing, discoverability (quality of documentation)                                                              |
+|                              | Team or Group           | PR merge times
+||Team or Group   |Quality of meetings
+||Team or Group   |Knowledge sharing or discoverability (quality of documentation) 
+||System|Knowledge sharing, discoverability (quality of documentation)|            |
+| **Efficiency and Flow**     | Individual       | Code review timing
+||Individual|Productivity perception 
+||Individual|Lack of interruptions                                                                          |
+|                              | Team or Group           | Code review timing
+||Team or Group|Handoffs                                                             |
+|                              | System      | Code review timing
+||System|Velocity/flow through the system                  |
+
+
+
+
+
+
+1: Duarte, C.H.C. Software Productivity in Practice: A SystematicMapping Study. Software 2022, 1,164–214. https://doi.org/10.3390/software1020008
+
+2: Ralph, P., et al. 2020. Pandemic programming: How Covid-19 affects software developers and how their organizations can help. Empirical Software Engineering25(6), 4927-4961; https://www.researchgate.net/publication/344342621_Pandemic_programming_How_COVID-19_affects_software_developers_and_how_their_organizations_can_help.
+
+3: Zenhub. "Developer Productivity Management: A Complete Guide." Accessed November 6, 2024. https://www.zenhub.com/guides/developer-productivity.
+
+4: Nicole Forsgren, Margaret-Anne Storey, Chandra Maddila, Thomas Zimmermann, Brian Houck, and Jenna Butler. 2021. The SPACE of Developer Productivity: There's more to it than you think. Queue 19, 1, Pages 10 (January-February 2021), 29 pages. https://doi.org/10.1145/3454122.3454124
