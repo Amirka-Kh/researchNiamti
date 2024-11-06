@@ -38,8 +38,11 @@ This thesis aims to develop a tool that will assist teams and management in trac
   - RQ 2.2: Which factors has more weight in the team description?
   - RQ 2.3: How to map metrics to team ...?
 
-- RQ 3: How to calculate project cost based on team data?
-  (in progress)
+- RQ 3: How to estimate effort based on team data?
+  - RQ 3.1: On what data is estimation based?
+  - RQ 3.2: What factors influence effort estiamation?
+  - RQ 3.3: What models are available and how to choose a model?
+  - RQ 3.4: How to improve effort estimation?
 
 By answering these questions, we hope to create a useful tool that will not only help mature teams continue to succeed as they scale but will also aid less experienced management teams in improving their estimation processes and decision-making. Ultimately, the goal is to develop a comprehensive framework that benefits all stakeholders in software development, from developers to project managers to upper management.
 
