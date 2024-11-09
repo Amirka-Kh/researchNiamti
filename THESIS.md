@@ -20,9 +20,9 @@ Moreover, having valid data is challenging, as collecting metrics can be difficu
 
 While estimating project outcomes and tracking developer productivity is no easy task, various methodologies have been developed to mitigate these challenges. Techniques like COCOMO2, Earned Value Management (EVM), burn-down charts, and risk analysis aim to provide more accurate project forecasts [12-15]. However, even with these tools, predicting when a project will become unprofitable or how team dynamics will affect future outcomes remains a challenge for many organizations [16].
 
-Amazing results are achieved, when management have mastered the use of tools and metrics to set realistic expectations for both themselves and their development teams. These teams leverage their understanding of metrics to maintain high productivity and consistently meet project deadlines and budget constraints \cite{dmts1}. However, as these teams grow in size, they encounter new challenges \cite{dmts1}. Scaling these processes effectively becomes more difficult, and the complexity of tracking productivity across larger teams can lead to diminishing returns \cite{dmts1}.
+Amazing results are achieved, when management have mastered the use of tools and metrics to set realistic expectations for both themselves and their development teams. These teams leverage their understanding of metrics to maintain high productivity and consistently meet project deadlines and budget constraints [17]. However, as these teams grow in size, they encounter new challenges [18]. Scaling these processes effectively becomes more difficult, and the complexity of tracking productivity across larger teams can lead to diminishing returns [19].
 
-Despite the current state of project estimation and developer contribution analysis, there is substantial room for improvement. Our aim is not to critique the entire industry but to build on the foundation that already exists and push it forward. While there are teams that have mastered the art of project and productivity estimation, there is still a need for tools and frameworks that can help them maintain accuracy as they scale. Furthermore, many organizations are still in the process of mastering these techniques, and they too can benefit from a more structured approach to estimation.
+Despite the current state of project estimation and developer contribution analysis, there is substantial room for improvement. Our aim is not to critique the entire industry but to build on the foundation that already exists and push it forward. While there are teams that have mastered the art of project and productivity estimation, there is still a need for tools and frameworks that can help them maintain accuracy as they scale. Furthermore, many organizations are still in the process of mastering these techniques, and they too can benefit from a more structured approach to estimation [20-21].
 
 This thesis aims to develop a tool that will assist teams and management in tracking productivity and accurately estimating future projects—whether that be setting deadlines, predicting budget overruns, or assessing team dynamics. To achieve this goal, we will address the following key questions:
 
@@ -106,3 +106,13 @@ References:
 Information Systems, Fifth, ISBN 978-0-13-206858-1](https://google.com)
 
 [9] [The road to results, ...](https://doe-10.1596/978-0-8213-7891-5)
+
+[17] T. Korhonen, A. Jääskeläinen, T. Laine, and N. Saukkonen, “How performance measurement can support achieving success in project-based operations,” International Journal of Project Management, vol. 41, no. 1, p. 102 429, 2023, ISSN: 0263-7863. doi: https://doi.org/10.1016/j.ijproman.2022.11.002. [Online](https://doi.org/10.1016/j.ijproman.2022.11.002). Available: https://www.sciencedirect.com/science/article/pii/S0263786322001326.
+
+[18] Tapasco-Alzate, Omar, Jaime A. Giraldo-García and Diógenes de Jesus Ramírez-Ramírez. “Productivity metrics in the context of knowledge work: literature vs practice.” International Journal of Productivity and Performance Management ahead-of-print (2021): n. pag.
+
+[19] A. Coskun and R. Erturgut, “An empirical research on developing a logistics performance scale,” International Journal of Productivity and Performance Management, vol. ahead-of-print, Feb. 2021. doi: 10.1108/ijppm-10-2020-0513.
+
+[20] Schmidt, Roy & Lyytinen, Kalle & Keil, Mark & Cule, Paul. (2001). Identifying Software Project Risks: An International Delphi Study. J. of Management Information Systems. 17. 5-36. 10.1080/07421222.2001.11045662.
+
+[21] Boehm, B. W., & Turner, R. (2004). "Balancing Agility and Discipline: A Guide for the Perplexed."
