@@ -2,7 +2,7 @@
 
 ## Abstract
 
-Accurate project estimation and developer contribution analysis are critical to the success of software development projects. This research addresses the challenges of linking developer productivity metrics to project estimation, with the goal of improving project planning, tracking, and overall team efficiency. We analyzed a wide range of productivity metrics, identifying those that are most closely linked to project outcomes. Using this analysis, we developed a tool that analyzes developer performance based on GitHub repository data. The tool tracks individual contributions, links these statistics to project estimation, and includes a feature for predicting potential project cost overruns.
+Accurate project estimation and developer contribution analysis are critical to the success of software development projects. This research addresses the challenges of linking developer productivity metrics to project estimation, with the goal of improving project planning, tracking, and overall team efficiency. We analyzed a wide range of models for estimating efforts and productivity metrics, identifying those that are most closely linked to project outcomes. Using this analysis, we developed a tool that analyzes developer performance based on GitHub repository data. The tool tracks individual contributions, links these statistics to project estimation, and includes a feature for predicting potential project cost overruns.
 
 Our tool was tested in a real-world setting by a software development company. The results were encouraging: the tool identified a developer who claimed to be overworked but whose contributions were average compared to the rest of the team. The situation led to the developer's voluntary departure, which, according to the company, had a positive impact on team morale and overall productivity. These findings demonstrate the potential of our tool to improve both project estimation and team dynamics, ultimately contributing to more efficient project management.It should be noted that we do not claim that our tool is a silver bullet for assessing the feasibility of any project. We are only saying that we have had a successful experience in test trials, which gives room for further research. In our case, the tool has been successful, but a full-fledged study is necessary for consistent conclusions. 
 
@@ -10,34 +10,38 @@ Our tool was tested in a real-world setting by a software development company. T
 
 In the fast-paced world of software development, the ability to accurately estimate project parameters and evaluate developer contributions is critical to a project’s success. Proper estimation helps set clear, achievable expectations for developers, which enhances their productivity and aligns their efforts with the project’s goals [1]. When developers see that their contributions are correctly recognized and rewarded, their motivation increases, leading to better work engagement. The relationship between work satisfaction and productivity is well-documented: when individuals satisfied with job and work environment and feel valued for the job they perform, they are more inclined to improve and grow, fostering a positive cycle of motivation and productivity [2].
 
-The practice of estimating project timelines and budgets, as well as measuring developer productivity, has evolved significantly over time. Traditionally, project estimation involved basic metrics like the number of lines of code (LOC), budget allocation, and deadline setting [3]. While these methods provided a foundation, they often fell short of capturing the full complexity of modern software development environments. Similarly, developer contribution was historically measured by lines of code produced, hours and the number of bugs found\fixed, failing to account for the qualitative aspects of a developer’s work, such as innovation, collaboration, or code quality [2, 3].
+The practice of estimating project timelines and budgets, as well as measuring developer productivity, has evolved significantly over time. Traditionally, project estimation involved basic metrics like the number of lines of code (LOC), budget allocation, and deadline setting [3]. While these methods provided a foundation, they often fell short of capturing the full complexity of modern software development environments. Similarly, developer contribution was historically measured by lines of code produced, hours and the number of bugs found\fixed, failing to account for the qualitative aspects of a developer’s work, such as innovation, collaboration, or code quality [2, 3, 5].
 
-With the growing complexity of software projects, there has been a gradual shift toward more nuanced methods of collecting and analyzing productivity metrics. Agile methodologies have allowed organizations to directly link developer effort with the amount of tasks completed and the time spent on each. Techniques such as velocity tracking and continuous integration have introduced additional metrics for assessing both team and individual performance [1]. However, despite these advancements, many organizations still struggle to accurately predict project outcomes and fairly evaluate developer contributions [1].
+With the growing complexity of software projects, there has been a gradual shift toward more nuanced methods of collecting and analyzing productivity metrics [4, 5]. Agile methodologies have allowed organizations to directly link developer effort with the amount of tasks completed and the time spent on each. Techniques such as velocity tracking and continuous integration have introduced additional metrics for assessing both team and individual performance [1]. However, despite these advancements, many organizations still struggle to accurately predict project outcomes and fairly evaluate developer contributions [1].
 
 Two main problems in project estimation are corrupted data and incorrect calculations [7]. Decisions based on corrupted data can provide a misleading picture of the development team, potentially leading to their underestimation or overestimation; neither scenario benefits the project [9]. Additionally, each project is unique, and statistical data from one project does not guarantee accuracy for another [10]. Furthermore, without appropriate techniques, management may fail to consider the dynamic nature of development teams and their productivity history. For instance, factors such as team cohesion, individual skill levels, and past project performance are often overlooked when estimating project complexity or setting deadlines [11]. As a result, projects are frequently either over- or under-estimated, which can lead to missed deadlines, budget overruns, and a general decline in team morale [12].
 
-Moreover, having valid data is challenging, as collecting metrics can be difficult. Some managers tend to rely on only one or two metrics to base their decisions. While this approach is better than having no metrics at all, it must be used correctly.[1] For instance, if a manager tracks the number of tasks accomplished by developers, all tasks should have similar scope in terms of time and complexity, which can be achieved by breaking down larger tasks into smaller ones. So, manager should also set right development process and make right calculations.
+Moreover, having valid data is challenging, as collecting metrics can be difficult. Some managers tend to rely on only one or two metrics to base their decisions [1,4]. While this approach is better than having no metrics at all, it must be used correctly. For instance, if a manager tracks the number of tasks accomplished by developers, all tasks should have similar scope in terms of time and complexity, which can be achieved by breaking down larger tasks into smaller ones. So, manager should also set right development process and make right calculations.
 
 While estimating project outcomes and tracking developer productivity is no easy task, various methodologies have been developed to mitigate these challenges. Techniques like COCOMO2, Earned Value Management (EVM), burn-down charts, and risk analysis aim to provide more accurate project forecasts [12-15]. However, even with these tools, predicting when a project will become unprofitable or how team dynamics will affect future outcomes remains a challenge for many organizations [16].
 
-Amazing results are achieved, when management have mastered the use of tools and metrics to set realistic expectations for both themselves and their development teams. These teams leverage their understanding of metrics to maintain high productivity and consistently meet project deadlines and budget constraints \cite{dmts1}. However, as these teams grow in size, they encounter new challenges \cite{dmts1}. Scaling these processes effectively becomes more difficult, and the complexity of tracking productivity across larger teams can lead to diminishing returns \cite{dmts1}.
+Amazing results are achieved, when management have mastered the use of tools and metrics to set realistic expectations for both themselves and their development teams. These teams leverage their understanding of metrics to maintain high productivity and consistently meet project deadlines and budget constraints [17]. However, as these teams grow in size, they encounter new challenges [18]. Scaling these processes effectively becomes more difficult, and the complexity of tracking productivity across larger teams can lead to diminishing returns [19].
 
-Despite the current state of project estimation and developer contribution analysis, there is substantial room for improvement. Our aim is not to critique the entire industry but to build on the foundation that already exists and push it forward. While there are teams that have mastered the art of project and productivity estimation, there is still a need for frameworks to avoid making mistakes when using metrics and there is a need for tools to automate metrics to help teams maintain accurate project and productivity estimation as they scale.[10]
+Despite the current state of project estimation and developer contribution analysis, there is substantial room for improvement. Our aim is not to critique the entire industry but to build on the foundation that already exists and push it forward. While there are teams that have mastered the art of project and productivity estimation, there is still a need for frameworks to avoid making mistakes when using metrics and there is a need for tools to automate metrics to help teams maintain accurate project and productivity estimation as they scale [10, 20-21].
 
 This thesis aims to develop a tool that will assist teams and management in tracking productivity and accurately estimating future projects—whether that be setting deadlines, predicting budget overruns, or assessing team dynamics. To achieve this goal, we will address the following key questions:
 
-* RQ 1: Which factors influence productivity?
-    * RQ 1.1: Which factors influence productivity?
-    * RQ 1.2: Which metrics are applied to measure those factors?
-    * RQ 1.3: Which metrics among them are reliable?
+- RQ 1: Which factors influence productivity?
+  - RQ 1.1: Which factors influence productivity?
+  - RQ 1.2: Which metrics are applied to measure those factors?
+  - RQ 1.3: Which metrics among them are reliable?
 
-* RQ 2: How productivity estimations relate to team ...?
-    * RQ 2.1: What is the productivity of a software development team?
-    * RQ 2.2: What factors affect the productivity of a software development team?
-    * RQ 2.3: How can you evaluate the productivity of a room of software developers?
 
-* RQ 3: How to calculate project cost based on team data?
+- RQ 2: How productivity estimations relate to team ...?
+    - RQ 2.1: What is the productivity of a software development team?
+    - RQ 2.2: What factors affect the productivity of a software development team?
+    - RQ 2.3: How can you evaluate the productivity of a room of software developers?
 
+- RQ 3: How to estimate effort based on project and team data?
+
+  - RQ 3.1: What models/techniques are available and on what data is estimation based?
+  - RQ 3.2: What factors influence to accuracy of effort estimation?
+  - RQ 3.3: How to improve effort estimation?
 
 By answering these questions, we hope to create a useful tool that will not only help mature teams continue to succeed as they scale but will also aid less experienced management teams in improving their estimation processes and decision-making. Ultimately, the goal is to develop a comprehensive framework that benefits all stakeholders in software development, from developers to project managers to upper management.
 
@@ -49,7 +53,7 @@ The essence of estimating both productivity and project outcomes has long been u
 
 One of the most prevalent misconceptions in productivity estimation is the belief that a single metric can capture the entire picture. Many management teams and leads tend to rely on isolated metrics—whether it's the number of commits, lines of code, or hours worked—believing that these metrics alone provide a comprehensive view of developer productivity. However, all metrics have flaws, and when used in isolation, they can paint a misleading picture. Metrics are often subject to corruption, manipulation, or misinterpretation. For example, near project deadlines, developers may work longer hours, inflating activity metrics without necessarily reflecting real progress or quality.
 
-Furthermore, different stakeholders require distinct sets of metrics. For example, management tends to focus on high-level metrics such as business outcomes and project timelines, while team leads might prioritize code quality and task completion. DevOps teams focus on operational efficiency, such as deployment frequency and uptime. These differing perspectives mean that no single metric can serve all needs, making it essential to gather a broad set of metrics from different dimensions. 
+Furthermore, different stakeholders require distinct sets of metrics. For example, management tends to focus on high-level metrics such as business outcomes and project timelines, while team leads might prioritize code quality and task completion. DevOps teams focus on operational efficiency, such as deployment frequency and uptime. These differing perspectives mean that no single metric can serve all needs, making it essential to gather a broad set of metrics from different dimensions.
 
 The SPACE framework (Satisfaction, Performance, Activity, Collaboration, and Efficiency) is a good example of how productivity should be viewed across multiple dimensions. Satisfaction, for example, is closely linked to productivity, as happier developers tend to produce higher-quality work and are less prone to burnout. Collaboration metrics reflect how well team members work together, while activity metrics track tangible outputs like commits and reviews. However, these activity metrics alone are insufficient without the context of performance and efficiency. A team that is performing well can often be many times more efficient than individual developers working in isolation, highlighting the importance of balancing team dynamics and individual contributions. Metrics should not just track outputs but also identify potential issues, such as burnout, dissatisfaction, and unrealistic expectations.
 
@@ -73,7 +77,7 @@ When it comes to project estimation, a refined approach is necessary. We propose
 
 #### Linking Productivity Metrics with Project Estimation
 
-One of the key goals of this research is to establish a clear connection between productivity metrics and project estimation. Productivity metrics, such as task completion rates and code churn, have traditionally been treated separately from project estimation, but our research aims to show that these two areas are closely linked. A highly productive team is likely to meet deadlines more consistently and avoid cost overruns, while teams with low productivity may struggle to deliver on time. By using a combination of code metrics, satisfaction data, and team collaboration metrics, we can develop a more accurate model for predicting project success and estimating project costs. 
+One of the key goals of this research is to establish a clear connection between productivity metrics and project estimation. Productivity metrics, such as task completion rates and code churn, have traditionally been treated separately from project estimation, but our research aims to show that these two areas are closely linked. A highly productive team is likely to meet deadlines more consistently and avoid cost overruns, while teams with low productivity may struggle to deliver on time. By using a combination of code metrics, satisfaction data, and team collaboration metrics, we can develop a more accurate model for predicting project success and estimating project costs.
 
 #### Defining Useful Metrics for Productivity and Project Estimation
 
@@ -93,10 +97,24 @@ References:
 
 [3] [Code and commit metrics of developer productivity: a study on team leaders perceptions](https://link.springer.com/article/10.1007/s10664-020-09820-z#citeas)
 
+[4] [A New Approach to Calibrating Functional Complexity Weight in Software Development Effort Estimation s](https://www.mdpi.com/2073-431X/11/2/15)
+
+[5] [Fernandez-Diego, Marta; Mendez, Erwin R.; Gonzalez-Ladron-De-Guevara, Fernando; Abrahao, Silvia; Insfran, Emilio . (2020). An Update on Effort Estimation in Agile Software Development: A Systematic Literature Review. IEEE Access, (), 1–1. doi:10.1109/ACCESS.2020.3021664](https://sci-hub.sidesgame.com/10.1109/ACCESS.2020.3021664)
+
 [7] [Project Management for
 Information Systems, Fifth, ISBN 978-0-13-206858-1](https://google.com)
 
 [10] [Samya, Sumithra, Vijayalakshmi Nagarajan, Ahilan Appathurai, and Salinda Suniram. "Software Cost Effort and Time Estimation Using Dragonfly Whale Lion Optimized Deep Neural Network." Revue Roumaine des Sciences Techniques, Série Électrotechnique et Énergétique 69 (2024): 431–436.](https://doi.org/10.59277/RRST-EE.2024.69.4.11)
 
 [9] [The road to results, ...](https://doe-10.1596/978-0-8213-7891-5)
+
+[17] T. Korhonen, A. Jääskeläinen, T. Laine, and N. Saukkonen, “How performance measurement can support achieving success in project-based operations,” International Journal of Project Management, vol. 41, no. 1, p. 102 429, 2023, ISSN: 0263-7863. doi: https://doi.org/10.1016/j.ijproman.2022.11.002. [Online](https://doi.org/10.1016/j.ijproman.2022.11.002). Available: https://www.sciencedirect.com/science/article/pii/S0263786322001326.
+
+[18] Tapasco-Alzate, Omar, Jaime A. Giraldo-García and Diógenes de Jesus Ramírez-Ramírez. “Productivity metrics in the context of knowledge work: literature vs practice.” International Journal of Productivity and Performance Management ahead-of-print (2021): n. pag.
+
+[19] A. Coskun and R. Erturgut, “An empirical research on developing a logistics performance scale,” International Journal of Productivity and Performance Management, vol. ahead-of-print, Feb. 2021. doi: 10.1108/ijppm-10-2020-0513.
+
+[20] Schmidt, Roy & Lyytinen, Kalle & Keil, Mark & Cule, Paul. (2001). Identifying Software Project Risks: An International Delphi Study. J. of Management Information Systems. 17. 5-36. 10.1080/07421222.2001.11045662.
+
+[21] Boehm, B. W., & Turner, R. (2004). "Balancing Agility and Discipline: A Guide for the Perplexed."
 
