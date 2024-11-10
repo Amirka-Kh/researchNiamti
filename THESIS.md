@@ -27,15 +27,14 @@ Despite the current state of project estimation and developer contribution analy
 This thesis aims to develop a tool that will assist teams and management in tracking productivity and accurately estimating future projects—whether that be setting deadlines, predicting budget overruns, or assessing team dynamics. To achieve this goal, we will address the following key questions:
 
 - RQ 1: Which factors influence productivity?
-  - RQ 1.1: Which factors influence productivity?
-  - RQ 1.2: Which metrics are applied to measure those factors?
-  - RQ 1.3: Which metrics among them are reliable?
-
-
-- RQ 2: How productivity estimations relate to team ...?
-    - RQ 2.1: What is the productivity of a software development team?
-    - RQ 2.2: What factors affect the productivity of a software development team?
-    - RQ 2.3: How can you evaluate the productivity of a room of software developers?
+  - RQ 1.1: What is the productivity of a software development (SD) team?
+  - RQ 1.2: Which factors influence that productivity?
+  - RQ 1.3: Which metrics are applied to measure those factors?
+  - RQ 1.4: Which metrics among them are reliable?
+    
+- RQ 2: How metrics can help control productivity of SD team?
+    - RQ 2.1: What the productivity metrics can tell about SD team?
+    - RQ 2.2: Which metrics has more weight in the team description?
 
 - RQ 3: How to estimate effort based on project and team data?
 
@@ -91,20 +90,19 @@ In this chapter, we have explored the common myths and mistakes associated with 
 
 References:
 
-[1] [The SPACE of Developer Productivity: There's more to it than you think](https://dl.acm.org/doi/abs/10.1145/3454122.3454124)
+[1] Nicole Forsgren, Margaret-Anne Storey, Chandra Maddila, Thomas Zimmermann, Brian Houck, and Jenna Butler. 2021. "The SPACE of Developer Productivity: There's more to it than you think". Queue 19, 1, Pages 10 (January-February 2021), 29 pages. https://doi.org/10.1145/3454122.3454124
 
-[2] [A Systematic Literature Review on the Influence of Enhanced Developer Experience on Developers’ Productivity: Factors, Practices, and Recommendations](https://dl.acm.org/doi/full/10.1145/3687299)
+[2] Abdul Razzaq, Jim Buckley, Qin Lai, Tingting Yu, and Goetz Botterweck. 2024. "A Systematic Literature Review on the Influence of Enhanced Developer Experience on Developers' Productivity: Factors, Practices, and Recommendations". ACM Comput. Surv. 57, 1, Article 13 (January 2025), 46 pages. https://doi.org/10.1145/3687299
 
-[3] [Code and commit metrics of developer productivity: a study on team leaders perceptions](https://link.springer.com/article/10.1007/s10664-020-09820-z#citeas)
+[3] Oliveira, E., Fernandes, E., Steinmacher, I. et al. "Code and commit metrics of developer productivity: a study on team leaders perceptions". Empir Software Eng 25, 2519–2549 (2020). https://doi.org/10.1007/s10664-020-09820-z
 
-[4] [A New Approach to Calibrating Functional Complexity Weight in Software Development Effort Estimation s](https://www.mdpi.com/2073-431X/11/2/15)
+[4] Hai, Vo Van, Ho Le Thi Kim Nhung, Zdenka Prokopova, Radek Silhavy, and Petr Silhavy. 2022. "A New Approach to Calibrating Functional Complexity Weight in Software Development Effort Estimation" Computers 11, no. 2: 15. https://doi.org/10.3390/computers11020015
 
-[5] [Fernandez-Diego, Marta; Mendez, Erwin R.; Gonzalez-Ladron-De-Guevara, Fernando; Abrahao, Silvia; Insfran, Emilio . (2020). An Update on Effort Estimation in Agile Software Development: A Systematic Literature Review. IEEE Access, (), 1–1. doi:10.1109/ACCESS.2020.3021664](https://sci-hub.sidesgame.com/10.1109/ACCESS.2020.3021664)
+[5] M. Fernández-Diego, E. R. Méndez, F. González-Ladrón-De-Guevara, S. Abrahão and E. Insfran, "An Update on Effort Estimation in Agile Software Development: A Systematic Literature Review," in IEEE Access, vol. 8, pp. 166768-166800, 2020, doi: 10.1109/ACCESS.2020.3021664.
 
-[7] [Project Management for
-Information Systems, Fifth, ISBN 978-0-13-206858-1](https://google.com)
+[7] James Cadle and Donald Yeates. 2007. "Project Management for Information Systems (5th. ed.)". Prentice Hall Press, USA.
 
-[10] [Samya, Sumithra, Vijayalakshmi Nagarajan, Ahilan Appathurai, and Salinda Suniram. "Software Cost Effort and Time Estimation Using Dragonfly Whale Lion Optimized Deep Neural Network." Revue Roumaine des Sciences Techniques, Série Électrotechnique et Énergétique 69 (2024): 431–436.](https://doi.org/10.59277/RRST-EE.2024.69.4.11)
+[10] Samya, Sumithra, Vijayalakshmi Nagarajan, Ahilan Appathurai, and Salinda Suniram. "Software Cost Effort and Time Estimation Using Dragonfly Whale Lion Optimized Deep Neural Network." Revue Roumaine des Sciences Techniques, Série Électrotechnique et Énergétique 69 (2024): 431–436. https://doi.org/10.59277/RRST-EE.2024.69.4.11
 
 [9] [The road to results, ...](https://doe-10.1596/978-0-8213-7891-5)
 
@@ -116,5 +114,5 @@ Information Systems, Fifth, ISBN 978-0-13-206858-1](https://google.com)
 
 [20] Schmidt, Roy & Lyytinen, Kalle & Keil, Mark & Cule, Paul. (2001). Identifying Software Project Risks: An International Delphi Study. J. of Management Information Systems. 17. 5-36. 10.1080/07421222.2001.11045662.
 
-[21] Boehm, B. W., & Turner, R. (2004). "Balancing Agility and Discipline: A Guide for the Perplexed."
+[21] Boehm, B. (2004). Balancing Agility and Discipline: A Guide for the Perplexed. In: Ramamoorthy, C.V., Lee, R., Lee, K.W. (eds) Software Engineering Research and Applications. SERA 2003. Lecture Notes in Computer Science, vol 3026. Springer, Berlin, Heidelberg. https://doi.org/10.1007/978-3-540-24675-6_1
 
