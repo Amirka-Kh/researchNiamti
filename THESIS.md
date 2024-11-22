@@ -2,7 +2,7 @@
 
 ## Abstract
 
-Accurate project estimation and developer contribution analysis are critical to the success of software development projects. This research addresses the challenges of linking developer productivity metrics to project estimation, with the goal of improving project planning, tracking, and overall team efficiency. We analyzed a wide range of models for estimating efforts and productivity metrics, identifying those that are most closely linked to project outcomes. Using this analysis, we developed a tool that analyzes developer performance based on GitHub repository data. The tool tracks individual contributions, links these statistics to project estimation, and includes a feature for predicting potential project cost overruns.
+Accurate project estimation and developer contribution analysis are critical to the success of software development projects. This research explores the challenges of linking developer productivity metrics to project estimation, with the goal of improving project planning and team efficiency. By analyzing a wide range of productivity and estimation models, the study identifies metrics most closely linked to project outcomes. A prototype tool was tested in a real-world setting, highlighting potential insights into productivity trends and estimation accuracy. Preliminary findings demonstrate the potential of combining data-driven metrics with qualitative insights, providing a foundation for future research and tool development.
 
 Our tool was tested in a real-world setting by a software development company. The results were encouraging: the tool identified a developer who claimed to be overworked but whose contributions were average compared to the rest of the team. The situation led to the developer's voluntary departure, which, according to the company, had a positive impact on team morale and overall productivity. These findings demonstrate the potential of our tool to improve both project estimation and team dynamics, ultimately contributing to more efficient project management.It should be noted that we do not claim that our tool is a silver bullet for assessing the feasibility of any project. We are only saying that we have had a successful experience in test trials, which gives room for further research. In our case, the tool has been successful, but a full-fledged study is necessary for consistent conclusions.
 
@@ -66,13 +66,15 @@ From Razzaq et al.'s work, we extracted and classified a list of measurable DevX
 
 #### Issues in Project Estimation
 
-Project estimation is another area where significant mistakes are commonly made. Many organizations rely on outdated or inaccurate data, often using tools like Gantt charts or relying on historical data that doesn't match the current project's context. This leads to faulty project estimations, especially when new projects differ substantially from past experiences. Project estimation models, such as the use of story points or task count statistics, attempt to predict project volume and complexity. While helpful to some extent, these methods are often flawed when the data they are based on is corrupted or misaligned with the project's unique context. [22]
+Project estimation is a complex process prone to significant errors. Many organizations depend on data that may be outdated or poorly aligned with the context of the current project. For example, relying on historical data or static tools like Gantt charts can lead to inaccurate assessments, especially when the new project significantly differs from previous ones. Models that utilize methods such as story points or task count statistics offer some predictive capabilities regarding project volume and complexity. However, these approaches often fail when the underlying data is misaligned with the unique requirements of the project. Improving the estimation process demands careful adaptation to specific project contexts rather than a one-size-fits-all methodology. [22]
 
 Another popular method, COCOMO 2, provides a more structured approach to project estimation but comes with its own set of limitations. Specifically, COCOMO 2 struggles with accurately reflecting team dynamics, work culture, and atmosphere. It also uses a broad set of parameters, some of which may be unclear or difficult to quantify. The rigid structure of models like COCOMO 2 can lead to inaccuracies, particularly in cases where human factors like satisfaction and team cohesion play significant roles in project outcomes.
 
 Techniques for estimating efforts are divided into non-algorithmic and algorithmic, only some of each group are described above. For example, the methods using story points as an indicator are based on expert assessment and are non-algorithmic, in turn COCOMO 2 is based on a clear algorithm with mathematical equations requiring specific quantitative data and coefficients. [5, 22]
 
 In this article, we will discuss the pros and cons of each approach, and outline a balanced strategy that will allow you to select relevant factors, indicators, an evaluation model or a hybrid of several models to achieve adequate results of estimating project efforts.
+
+## Methodology and Design
 
 #### A Correct Approach to Productivity and Project Estimation
 
@@ -82,7 +84,7 @@ When it comes to project estimation, a refined approach is necessary. We propose
 
 #### Linking Productivity Metrics with Project Estimation
 
-One of the key goals of this research is to establish a clear connection between productivity metrics and project estimation. Productivity metrics, such as task completion rates and code churn, have traditionally been treated separately from project estimation, but our research aims to show that these two areas are closely linked. A highly productive team is likely to meet deadlines more consistently and avoid cost overruns, while teams with low productivity may struggle to deliver on time. By using a combination of code metrics, satisfaction data, and team collaboration metrics, we can develop a more accurate model for predicting project success and estimating project costs.
+This research aims to explore how software development team productivity impacts project estimation accuracy. Factors like task completion rates, code churn, and team collaboration metrics are often studied separately from project estimation. However, this research investigates the potential connections between these domains. The preliminary objective is to identify productivity-related factors that influence labor costs and, consequently, the reliability of project estimations. This exploratory study will provide foundational insights without proposing new tools or frameworks, maintaining a focused scope in line with the study’s goals.
 
 #### Defining Useful Metrics for Productivity and Project Estimation
 
