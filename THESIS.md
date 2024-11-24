@@ -52,7 +52,7 @@ The essence of estimating both productivity and project outcomes has long been u
 
 One of the most prevalent misconceptions in productivity estimation is the belief that a single metric can capture the entire picture. Many management teams and leads tend to rely on isolated metrics—whether it's the number of commits, lines of code, or hours worked—believing that these metrics alone provide a comprehensive view of developer productivity. However, all metrics have flaws, and when used in isolation, they can paint a misleading picture. Metrics are often subject to corruption, manipulation, or misinterpretation. For example, near project deadlines, developers may work longer hours, inflating activity metrics without necessarily reflecting real progress or quality.
 
-Furthermore, different stakeholders require distinct sets of metrics. For example, management tends to focus on high-level metrics such as business outcomes and project timelines, while team leads might prioritize code quality and task completion. DevOps teams focus on operational efficiency, such as deployment frequency and uptime. These differing perspectives mean that no single metric can serve all needs, making it essential to gather a broad set of metrics from different dimensions.
+Furthermore, different stakeholders require distinct sets of metrics. For example, management tends to focus on high-level metrics such as business outcomes and project timelines, while team leads might prioritize code quality and task completion. DevOps teams focus on operational efficiency, such as deployment frequency and uptime. These differing perspectives mean that no single metric can serve all needs, making it essential to gather a broad set of metrics from different dimensions.[1, 35]
 
 Moreover, the reliability of metrics is a critical consideration, as they are often corrupted or inaccurate. This issue arises when project managers or leads are unable to enforce or verify adherence to established work protocols. For instance, developers may fail to track their time, assign estimation points only after tasks are completed, or move tasks between stages without valid justification. Such practices lead to data gaps or misrepresentations [31]. Misuse in the collection of metrics further exacerbates this issue. Recent research analyzing 730,000 Java methods from 47 open-source projects highlights how contradictions in prior studies often stem from differences in evaluation contexts and indicators [32]. The findings emphasize that source code metrics can provide reliable insights into maintenance effort only when applied with careful consideration of context, avoiding one-size-fits-all approaches. Ensuring data reliability requires adherence to proper guidelines and methodologies for metric usage.
 
@@ -66,13 +66,15 @@ Research in software development increasingly acknowledges the impact of Develop
 
 According to the study, several essential practices have been identified as enhancing DevX in ways that positively affect productivity. These include minimizing interruptions, improving team collaboration, and ensuring a stable, supportive technical environment. For productivity evaluation, understanding the status of these DevX factors is crucial. Low indicators in DevX metrics may suggest the need to implement specific DevX practices, which can enhance team satisfaction, reduce inefficiencies, and ultimately boost overall productivity.
 
-From Razzaq et al.'s work, we extracted and classified a list of measurable DevX metrics, organizing them by applicability and ease of collection. The table below presents these metrics and their categorization, providing a structured approach to incorporate DevX factors into our productivity measurement framework. In cases where specific DevX metrics fall below expectations, targeted DevX practices can be employed to address gaps, thereby aligning DevX with productivity goals in a data-driven way.
+From the work of Razzaq et al. we extracted and categorized a list of measurable DevX metrics, organizing them by applicability and ease of collection. These metrics, and their categorization, provide a structured approach to incorporating DevX factors into our performance measurement framework. In cases where specific DevX metrics do not meet expectations, targeted DevX practices can be used to address the deficiencies, thereby aligning DevX with data-driven performance goals.[26]
+
+Translated with www.DeepL.com/Translator (free version)
 
 #### Issues in Project Estimation
 
 Project estimation is a complex process prone to significant errors. Many organizations depend on data that may be outdated or poorly aligned with the context of the current project. For example, relying on historical data or static tools like Gantt charts can lead to inaccurate assessments, especially when the new project significantly differs from previous ones. Models that utilize methods such as story points or task count statistics offer some predictive capabilities regarding project volume and complexity. However, these approaches often fail when the underlying data is misaligned with the unique requirements of the project. Improving the estimation process demands careful adaptation to specific project contexts rather than a one-size-fits-all methodology. [22]
 
-Another popular method, COCOMO 2, provides a more structured approach to project estimation but comes with its own set of limitations. Specifically, COCOMO 2 struggles with accurately reflecting team dynamics, work culture, and atmosphere. It also uses a broad set of parameters, some of which may be unclear or difficult to quantify. The rigid structure of models like COCOMO 2 can lead to inaccuracies, particularly in cases where human factors like satisfaction and team cohesion play significant roles in project outcomes.
+Another popular method, COCOMO 2, provides a more structured approach to project estimation but comes with its own set of limitations. Specifically, COCOMO 2 struggles with accurately reflecting team dynamics, work culture, and atmosphere. It also uses a broad set of parameters, some of which may be unclear or difficult to quantify. The rigid structure of models like COCOMO 2 can lead to inaccuracies, particularly in cases where human factors like satisfaction and team cohesion play significant roles in project outcomes. [36]
 
 Techniques for estimating efforts are divided into non-algorithmic and algorithmic, only some of each group are described above. For example, the methods using story points as an indicator are based on expert assessment and are non-algorithmic, in turn COCOMO 2 is based on a clear algorithm with mathematical equations requiring specific quantitative data and coefficients. [5, 22]
 
@@ -81,6 +83,8 @@ In this article, we will discuss the pros and cons of each approach, and outline
 ## Methodology and Design
 
 #### A Correct Approach to Productivity and Project Estimation
+
+## Methodology (WIP)
 
 To address these issues, productivity estimation should begin with accurate and comprehensive metric collection [24]. Code-related metrics, such as churn rate, number of lines of code, and changes per commit, are essential, but they should be complemented by metrics related to story points, tasks completed, and time spent [25]. These should be analyzed in relation to team satisfaction and cohesion, as both have a direct impact on long-term productivity.
 
@@ -151,3 +155,8 @@ References:
 [33] Menozzi, Samuel, and Philippe Grégoire. "" Analyse fondamentale des actions-Valorisation des entreprises. Cas pratique: Ubisoft Entertainment SA."
 
 [34] Dunnette, M.D., & Fleishman, E.A. (Eds.). (1982). Human Performance and Productivity: Volumes 1, 2, and 3 (1st ed.). Psychology Press. https://doi.org/10.4324/9781315802909
+
+[35] Derek DeBellis, Kevin M. Storer, Amanda Lewis et al. DORA Accelerate
+State of DevOps (2024) https://cloud.google.com/resources/devops/state-of-devops
+
+[36] Samya, Sumithra, Vijayalakshmi Nagarajan, Ahilan Appathurai, and Salinda Suniram. "Software Cost Effort and Time Estimation Using Dragonfly Whale Lion Optimized Deep Neural Network." Revue Roumaine des Sciences Techniques, Série Électrotechnique et Énergétique 69 (2024): 431–436. https://doi.org/10.59277/RRST-EE.2024.69.4.11.
