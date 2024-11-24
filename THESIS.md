@@ -68,8 +68,6 @@ According to the study, several essential practices have been identified as enha
 
 From the work of Razzaq et al. we extracted and categorized a list of measurable DevX metrics, organizing them by applicability and ease of collection. These metrics, and their categorization, provide a structured approach to incorporating DevX factors into our performance measurement framework. In cases where specific DevX metrics do not meet expectations, targeted DevX practices can be used to address the deficiencies, thereby aligning DevX with data-driven performance goals.[26]
 
-Translated with www.DeepL.com/Translator (free version)
-
 #### Issues in Project Estimation
 
 Project estimation is a complex process prone to significant errors. Many organizations depend on data that may be outdated or poorly aligned with the context of the current project. For example, relying on historical data or static tools like Gantt charts can lead to inaccurate assessments, especially when the new project significantly differs from previous ones. Models that utilize methods such as story points or task count statistics offer some predictive capabilities regarding project volume and complexity. However, these approaches often fail when the underlying data is misaligned with the unique requirements of the project. Improving the estimation process demands careful adaptation to specific project contexts rather than a one-size-fits-all methodology. [22]
