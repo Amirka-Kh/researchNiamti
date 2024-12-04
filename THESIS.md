@@ -82,7 +82,48 @@ In this article, we will discuss the pros and cons of each approach, and outline
 
 ## Methodology (WIP)
 
-To address these issues, productivity estimation should begin with accurate and comprehensive metric collection [24]. Code-related metrics, such as churn rate, number of lines of code, and changes per commit, are essential, but they should be complemented by metrics related to story points, tasks completed, and time spent [25]. These should be analyzed in relation to team satisfaction and cohesion, as both have a direct impact on long-term productivity.
+This study employs a structured and multi-phase methodological approach to investigate the relationship between software development productivity metrics and project estimation accuracy. By combining theoretical exploration, empirical data collection, and prototype testing, the research seeks to advance understanding in this domain and provide practical tools for improving estimation practices.
+
+### Research Approach
+
+The research follows an exploratory and applied approach, integrating quantitative methods. The methodology is informed by the SPACE framework (Satisfaction, Performance, Activity, Collaboration, Efficiency), which emphasizes the multifaceted nature of productivity. The study is structured into three sequential phases: metric identification, data analysis, and tool development and validation.
+
+### Phase 1: Identification and Selection of Metrics
+
+The first phase focused on the systematic identification of relevant productivity and estimation metrics. This was achieved through:
+
+- **Literature Review**: An extensive review of academic and industry literature was conducted to collate existing knowledge on software productivity metrics, estimation models, and their applications. Key sources included studies on developer productivity frameworks, such as SPACE, and empirical analyses of productivity indicators (e.g., churn rate, task completion rates, and satisfaction metrics). 
+- **Framework Adoption**: The SPACE framework was selected as the foundational lens, ensuring that the metrics encompass diverse dimensions such as developer satisfaction, efficiency, and team dynamics.
+- **Criteria for Metric Selection**: Metrics were evaluated based on their relevance, reliability, and applicability to modern software development practices. This evaluation considered both traditional metrics (e.g., lines of code, churn) and multidimensional metrics (e.g., team collaboration and task complexity).
+
+### Phase 2: Data Collection and Analysis
+
+The second phase involved the systematic collection and analysis of data to evaluate the relationships between productivity metrics and project outcomes. 
+
+**Quantitative Data** Extracted from project management and version control systems (e.g., Jira, Git) to include task completion rates, churn rates, and story point estimates. Quantitative data were programmatically extracted using APIs and processed to ensure consistency.
+
+#### Analytical Methods
+Statistical techniques, including correlation and regression analysis, were employed to identify patterns and relationships between metrics and project outcomes. Predictive models were developed to assess the impact of specific productivity factors on project timelines and budgets.
+
+### Phase 3: Tool Development and Validation
+
+In the final phase, a prototype tool was developed to operationalize the findings and validate their practical utility.
+
+#### Tool Design
+- The tool integrates the selected productivity metrics into an interactive dashboard, enabling real-time tracking of individual and team performance.
+- Predictive modules were implemented to estimate project timelines, budgets, and potential risks based on collected data.
+- The tool leverages visualization techniques to highlight key insights, such as deviations in task completion rates or emerging risks of burnout.
+
+#### Real-World Validation
+- The prototype was deployed within a software development company for empirical testing.
+- Validation focused on the tool’s capacity to identify productivity trends, highlight estimation inaccuracies, and support managerial decision-making.
+
+### Ethical Considerations
+
+Ethical rigor was maintained throughout the study. All data were not anonymized to do not care about participant confidentiality. The tool’s deployment was accompanied by transparent communication with all stakeholders.
+
+
+## Results (TODO)
 
 When it comes to project estimation, a refined approach is necessary. We propose using an enhanced version of COCOMO 2 that incorporates better metrics and more reliable data derived from developer feedback and team estimation [28]. For example, recent studies have demonstrated a correlation between developer satisfaction and project success [1, 26]. This suggests that satisfaction metrics can help predict the efficiency of the team and the likelihood of meeting project deadlines. By collecting and analyzing satisfaction data, we can better understand how a team’s organization affects its performance, and use this information to make more accurate project estimations [29, 30].
 
