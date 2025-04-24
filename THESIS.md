@@ -1,4 +1,4 @@
-# Amazing Relation of Developer and Project Estimations
+# COCOMO II in the Age of Agile: Expanding the Model with Dynamic Factors and Developer Metrics
 
 ## Abstract
 
@@ -233,6 +233,167 @@ Despite the promise of real-time adaptations, several challenges still hinder pr
 
 In summary, the literature shows a growing body of work aimed at making COCOMO II more adaptable through dynamic estimation methods. These efforts address various real-world disruptions using optimization techniques, real-time metric integration, and machine learning enhancements. However, most approaches remain fragmented or computationally intensive, and few offer end-to-end support for budget and timeline control throughout the project lifecycle.
 This opens a clear research opportunity: to develop a lightweight, real-time estimation framework that extends COCOMO II with dynamic metric integration, automated recalibration, and practical decision support for project managers. The following section presents such a solution – designed to be both technically feasible and aligned with Agile project realities.
+
+## Methodology
+
+### Literature Review Process
+
+To ensure our approach is grounded in both academic rigor and practical relevance, we conducted a structured literature review across multiple research databases, including IEEE Xplore, ACM Digital Library, SpringerLink, and Google Scholar. Keywords used in the search included “COCOMO II dynamic estimation,” “Agile cost modeling,” “real-time effort estimation,” “software forecasting metrics” and “productivity metrics.” Preference was given to papers published between 2010 and 2024, with emphasis on works relevant to Agile, DevOps, and dynamic estimation practices.
+
+Given that this thesis was developed collaboratively by a group of three researchers, we adopted a topic-based division of research responsibilities to ensure thorough coverage and minimize redundancy:
+
+- The first researcher focused on team productivity metrics, efficiency in Agile environments, and developer activity/code metrics. This role also involved investigating how these modern metrics could be mapped to COCOMO II cost drivers.
+- The second researcher concentrated on project estimation methodologies, including COCOMO, COCOMO II, and the theoretical underpinnings of cost drivers, submodels, and effort estimation mechanics.
+- The third researcher explored COCOMO II extensions, such as Agile COCOMO, fuzzy and AI-based models, and a wide range of real-time estimation tools. This also included examining the limitations of static models and summarizing proposed solutions from recent literature.
+
+In addition to traditional academic sources, we incorporated modern LLM-powered research tools to augment and accelerate our review process. Tools such as SciSpace, Perplexity, and Storm Genie (developed at Stanford University) were particularly effective for identifying relevant references, uncovering related studies, and comparing research directions across publications. However, we were careful not to rely blindly on AI-generated citations. All suggested papers were subjected to the same evaluation criteria used in our manual review, including:
+- Publication in reputable sources (journals or conferences)
+- Relevance to our thesis scope
+- Clarity and reliability of the methodology presented
+
+Only after verifying that a paper met these criteria did we incorporate it into our reference set.
+
+Meanwhile, tools like ChatGPT and DeepSeek played a different but equally valuable role: helping us organize complex ideas, eliminate tautologies, and structure content in a way that improves clarity for the reader. They were used during our collaborative writing sessions to draft, rephrase, and cross-check logic across sections—always with human oversight.
+
+LLMs were particularly helpful in resolving conceptual disagreements within our research group. In situations where team members had conflicting interpretations of a topic or paper, we would submit the source material to an LLM and ask it to evaluate both viewpoints based on evidence from the article. This method helped reduce bias, surface overlooked details, and clarify nuanced arguments by grounding them in verified citations.
+
+Overall, the combination of distributed research responsibilities, manual review, and AI-augmented analysis allowed us to build a more comprehensive, efficient, and critically informed foundation for our framework development.
+
+### Identifying Gaps and Formulating Research Questions
+
+From the early stage of our work, we established a set of guiding research questions centered around three main areas: developer activity metrics, the COCOMO II estimation model, and real-time project budget control. These questions helped us identify gaps in existing approaches and, more importantly, shaped the design goals and research areas we needed to explore in depth.
+
+Through our investigation, several key focus areas emerged:
+
+- **Metric Relevance and Integration Potential**: We needed to determine which activity and productivity metrics (e.g., code churn, PR activity, bug resolution time) could meaningfully improve estimation accuracy, and how these could be mapped to existing cost drivers in COCOMO II. This required identifying metrics that reflect real project effort, as opposed to shallow indicators like raw LOC or number of commits. Additionally, we had to understand how to normalize metrics with different data types (ordinal, nominal, ratio) so they could be interpreted consistently across different teams and projects.
+
+- **Cost Driver Sensitivity and Real-Time Relevance**: A deeper look into the COCOMO II model revealed that not all cost drivers are equally dynamic. We identified a subset of drivers that are relatively stable across the project lifecycle (e.g., platform volatility), and others that are highly sensitive to real-time team activity (e.g., team cohesion, schedule pressure). This led us to ask: Which cost drivers can be updated in real-time without compromising the model's integrity? And: How can the sensitivity of these drivers be tuned to improve estimation precision? We also investigated techniques to refine effort multipliers based on live data, rather than relying purely on expert judgment.
+
+
+- **Evaluation of Real-Time Estimation Approaches**: We explored existing implementations of real-time cost estimation tools and algorithms to assess their coverage, accuracy, and implementation complexity. We analyzed which systems tracked the most relevant parameters (team structure, velocity, code churn), and which offered the best balance between automation, accuracy, and interpretability. This comparison also helped us identify trade-offs – some approaches offered excellent precision but required heavy manual calibration, while others were lightweight but missed critical project variables.
+
+Together, these investigations allowed us to frame a methodology that does not attempt to rebuild COCOMO II from scratch, but rather enhances it incrementally, using real-time insights that are mapped carefully to its core structure. Our goal became clear: to design a flexible, real-time extension to COCOMO II that integrates dynamic project metrics and enables ongoing recalibration of effort estimates with minimal manual intervention.
+
+### Selection of Metrics
+
+Our approach to selecting metrics was based on a structured, evidence-based process. We began by identifying a broad pool of 36 industry-recognized metrics commonly used to monitor aspects of team productivity, codebase quality, and Agile team dynamics. These metrics were gathered from a combination of academic research, engineering handbooks (e.g., DORA reports, SPACE framework), and tooling documentation from platforms such as GitHub, GitLab, Jira, and SonarQube. The whole metric list is available in Appendix 1.
+
+The goal was to determine which of these metrics could be meaningfully used to enhance the COCOMO II estimation model, particularly in real-time or Agile development environments. To narrow down the list, we applied a two-stage filtering process:
+- Industry Usefulness and Relevance: We analyzed how frequently each metric appeared in real-world Agile teams and which ones were used by popular development tools and DevOps dashboards. Metrics that lacked clear application in real-world team monitoring or were used only in niche contexts were deprioritized.
+- Integrability with COCOMO II:  We then reviewed the academic literature and case studies to assess whether a metric could be meaningfully mapped to one or more of COCOMO II cost drivers or scale factors. Only metrics with a clear conceptual or empirical link to effort, complexity, or schedule drivers were retained.
+
+As a result of this process, we filtered down the initial 36 metrics to a final set of 6 core metrics that met both criteria. These metrics were:
+- Code Churn
+- Commit Frequency
+- Pull Request (PR) Activity
+- Task Completion Rate
+- Bug Resolution Time
+- Team Size & Developer Load
+
+Each selected metric has a supporting evidence base and a clear mapping rationale to COCOMO II components. For clarity and transparency, we created Table 2 describing each metric.
+
+#### Table 2: Justification and Mapping of Selected Metrics
+
+| Metric | Definition | Industry Usage | Agile Relevance | COCOMO II Mapping | Supporting Literature |
+|---|---|---|---|---|---|
+| Code Churn | Volume of code added, modified, or deleted in a given timeframe. | Tracked via Git tools; high churn = instability or frequent rework. | Reflects iteration intensity and refactoring cycles. | Product Complexity, Required Reusability | Kazemifard et al. (2011), Langsari & Sarno (2017), SPACE |
+| Commit Frequency | Number of commits made by developers over time. | Commonly used to monitor team activity and momentum. | Indicates sprint throughput and development consistency. | Schedule Pressure, Team Cohesion | DORA, GitLab DevOps Research, Cheng et al. (2019) |
+| PR Activity | Number of pull requests opened, reviewed, approved, or merged. | Used on GitHub/GitLab to assess collaboration and code review practices. | Measures communication, collaboration, and process health. | Team Cohesion, Process Maturity, Software Reliability | SPACE, DORA, Microsoft Research (2021), Awalliya et al. (2024) |
+| Task Completion Rate | Percentage of completed tasks (e.g., backlog items) in a time period. | Agile standard for measuring velocity and delivery rate. | Reflects sprint success, workflow efficiency, and scope control. | Schedule Constraint, Application Experience | Mike Cohn, JIRA, Haque (2012), SPRINT models |
+| Bug Resolution Time | Time between bug report and resolution. | Used to assess QA responsiveness and product stability. | Indicates technical debt, testing maturity, and process responsiveness. | Software Reliability, Testing Effort | SonarQube, Cheng et al. (2019), Atlassian |
+| Team Size & Dev Load | Active developer count and avg. number of tasks per developer. | Used in planning tools to manage workload and resource allocation. | Helps track team capacity and identify overload risks. | Personnel Capability, Team Cohesion, Development Flexibility | SPACE, Scrum.org, Kazemifard et al. (2011), Xu & Bai (2023) |
+
+This structured selection process ensures that our metric integration is not only technically valid but also practically grounded, maximizing the likelihood that the extended model will be usable and interpretable in real-world software development environments.
+
+### Integration Strategy with COCOMO II
+
+To integrate real-time activity metrics into the COCOMO II estimation process, we analyzed several existing strategies proposed in the literature and industry tools. Each approach has its own trade-offs in terms of complexity, flexibility, and compatibility with COCOMO II core structure.
+
+We identified four main integration patterns:
+1. Direct Cost Driver Tuning: Adjusting existing COCOMO II cost driver ratings (e.g., changing “team cohesion” from nominal to high) based on metric thresholds.
+2. Formula Modification: Altering the core estimation formula of COCOMO II by adding new parameters or scaling factors to account for metric values.
+3. Extended Submodels or Custom Functions: Introducing new subfunctions or drivers outside the original COCOMO II structure (e.g., adding a new driver for churn or bug density).
+4. Middleware-Based Mapping Layer: Creating an intermediate component that monitors live metrics, interprets them, and dynamically updates relevant cost driver values before the main COCOMO II formula is executed.
+
+After comparative analysis, we chose the middleware-based approach. This decision was based on three key factors:
+- Modularity: Middleware allows integration without modifying the core COCOMO II logic, ensuring compatibility with standard tools and preserving interpretability.
+- Real-Time Adaptability: A separate layer can independently handle metric normalization, threshold detection, and driver adjustment logic on a periodic or event-based schedule.
+- Scalability: The mapping engine can be extended to support additional metrics or alternative models (e.g., COSYSMO, Agile COCOMO) without reengineering the entire system.
+
+The middleware acts as a dynamic preprocessor that evaluates real-time inputs (e.g., task completion rate, code churn) and updates driver values accordingly. For instance, if PR activity increases significantly within a sprint, the system can incrementally raise the “team cohesion” driver score and recalculate the Effort Adjustment Factor (EAF), triggering a refreshed cost estimation.
+
+An essential part of this integration is ensuring that metric values with different scales can be mapped meaningfully to COCOMO II’s ordinal rating system (Very Low to Extra High). During design, we considered:
+- Ratio-scaled metrics (e.g., churn per week, bug resolution time): These were normalized using Z-score, min-max scaling, or domain-specific thresholds, and then mapped to ordinal intervals.
+- Nominal or categorical indicators (e.g., presence/absence of a peer review policy): These were treated via binary flag mapping or incorporated as triggers that modify qualitative driver assessments.
+- Contextual calibration: Where possible, we used historical team/project baselines to define what constitutes “high” vs. “low” churn or velocity, allowing for personalized mappings.
+
+The full normalization methodology, including mathematical functions and transformation examples, is described in detail in the Implementation chapter.
+
+### Algorithm Selection for Dynamic Estimation
+
+We surveyed multiple algorithmic approaches for integrating real-time tracking with effort estimation. Our criteria were:
+- Lightweight implementation (to enable easy integration into Agile pipelines)
+- Support for multi-factor input calibration
+- Explainability and reproducibility
+
+Table 3 presents analysis upon different estimation approaches based on above criterias.
+
+#### Table 3: Comparative Analysis of Dynamic Estimation Algorithms
+
+| Approach | Implementation | Multi-Factor Calibration | Explainability & Reproducibility | Adaptability to Real-Time Data | Manual Tuning Needs | COCOMO II Integration Feasibility | Supporting Literature |
+|---|---|---|---|---|---|---|---|
+| Fuzzy Multi-Objective Particle Swarm Optimization (MOPSO) | High computational cost due to fuzzy logic and swarm simulations | Well-suited for tuning multiple cost drivers | Low (black-box nature, hard to trace decisions) | Can adapt to dynamic inputs via swarm iteration | Requires careful tuning of fuzzy sets | Needs wrapper layer for integration | (Langsari & Sarno, 2017) Effective in tuning COCOMO parameters with better precision but heavy in execution |
+| Firework Algorithm (FWA) | Moderate complexity; more scalable than traditional EAs | Uses explosion operator to explore multiple dimensions | Limited interpretability; stochastic behavior | Designed for evolving project states | Needs careful parameter tuning | Integration possible via external scheduler update | (Cheng et al., 2019) Good convergence in dynamic environments |
+| Rule-Based Adaptive Middleware (Proposed) | Lightweight – operates as an external layer without modifying core COCOMO logic | Maps real-time metrics to cost drivers via rules and scaling functions | High – deterministic logic, easy to debug and audit | Fully compatible with dynamic metrics from CI pipelines | Minimal – rules tuned once and reused | Seamless – treats COCOMO as a black-box | Custom-built for this framework; draws from fuzzy sets and empirical calibration |
+| Machine Learning Regression (e.g., Random Forest, XGBoost) | Varies – training overhead but lightweight at inference | Can capture complex relationships among metrics | Medium – models are interpretable to some extent (depending on method) | Can learn from incoming project data | Needs periodic retraining | Direct integration complex – needs prediction-to-driver translation layer | ML approaches like Random Forest showed promising results in estimation accuracy (some studies achieve <10% MRE) |
+| Function Point + LOC Hybrid Estimation | Very lightweight; traditional methods | Limited – mostly static size measures | High – formulas well known and explainable | Not responsive to real-time team dynamics | Minimal manual effort | Integration only useful in early phase (Post-Architecture Model) | Used in traditional and waterfall contexts; lacks agility |
+| Genetic Algorithm for Schedule Reshaping | Computationally heavy for large teams | Multi-objective tuning possible | Not easily reproducible due to randomness | Can evolve schedules under disruption | High – selection and crossover logic needs tuning | Not focused on estimation directly | (Xiao et al., 2010) More suitable for timeline than cost tracking |
+
+Based on these criteria, we chose to implement a rule-based adjustment system as the core of our prototype. However, we also analyzed more advanced methods:
+- Fuzzy logic systems (e.g., FECSCE) for capturing ambiguous input states
+- Multi-objective evolutionary algorithms (e.g., firework, MOPSO) for adaptive optimization
+- SPRINT algorithm for task prioritization tied to cost estimation
+While some of these methods provided more precision, they were computationally heavy and harder to explain or deploy in typical Agile environments. Thus, the choice stopped on a rule-based adjustment system.
+
+### Testing Strategy for Framework Evaluation
+
+To evaluate the performance and applicability of our enhanced COCOMO II framework, we explored various testing techniques, benchmarking datasets, and project validation methodologies commonly used in software cost estimation research.
+
+#### Review of Testing Approaches for Estimation Models
+
+Based on prior studies and validation methods used in literature, three major testing strategies were identified:
+- Historical Dataset Validation: Using real-world historical project data (e.g., NASA, ISBSG, or PROMISE repositories) and comparing estimated vs. actual effort.
+- Synthetic Project Simulation: Generating simulated Agile project data with controlled parameters to analyze how the estimation model responds to metric variations.
+- Live Integration Testing: Applying the framework to an ongoing or recently completed internal project to monitor and adjust cost drivers in real time.
+
+Each approach has its trade-offs in terms of complexity, traceability, and feasibility. For our initial evaluation, we opted for historical dataset validation due to its clarity, comparability, and low barrier to entry.
+
+#### Dataset Selection Criteria
+
+We reviewed several publicly available datasets commonly used for benchmarking software estimation models, including:
+
+| Dataset | Size | Features | Format | Used In |
+|---|---|---|---|---|
+| COCOMO NASA93 | 93 projects | Size (KLOC), cost drivers, effort | Tabular CSV | Boehm et al. (COCOMO II), many ML models |
+| ISBSG | 1,000+ projects | Mixed metrics, FP/LOC-based | Subscription-based | Academic/industrial benchmarking |
+| Desharnais | 81 projects | FP-based + team size, effort | Open CSV | Agile estimator validation |
+| TUKUTURI | Small | Agile + DevOps projects | Custom format |Experimental Agile frameworks |
+
+After evaluating availability, relevance to COCOMO II, and compatibility with our model structure, we selected the COCOMO NASA93 dataset. It provides detailed cost driver values and effort figures for 93 real software projects, making it directly compatible with our base model and suitable for before/after comparison.
+
+#### Evaluation Plan
+
+We designed a comparative evaluation framework with the following steps:
+1. Baseline Estimation: Use the standard COCOMO II model on the original NASA93 dataset without dynamic enhancements.
+2. Enhanced Estimation: Run the same projects through our framework, applying synthetic changes to selected metrics (e.g., simulate increased churn, reduced team cohesion).
+3. Comparison Metrics: Use standard accuracy metrics like:
+- MRE (Mean Relative Error)
+- MMRE (Mean Magnitude of Relative Error)
+- PRED(25): % of predictions within 25% of actual
+4. Visualization: Plot estimated vs. actual vs. enhanced estimates to show correction trends and performance impact.
+
+In the Results chapter, we will report on these experiments, illustrating how the enhanced model responds to simulated real-time data changes and how it improves estimation accuracy in dynamic environments.
+
 
 ## References:
 
